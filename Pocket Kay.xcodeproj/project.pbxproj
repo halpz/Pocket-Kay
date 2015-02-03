@@ -12,8 +12,10 @@
 		DAA31AA31A815B4700E4F176 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31AA21A815B4700E4F176 /* ViewController.m */; };
 		DAA31AA61A815B4700E4F176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AA41A815B4700E4F176 /* Main.storyboard */; };
 		DAA31AA81A815B4700E4F176 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AA71A815B4700E4F176 /* Images.xcassets */; };
-		DAA31AAB1A815B4700E4F176 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AA91A815B4700E4F176 /* LaunchScreen.xib */; };
 		DAA31AB71A815B4700E4F176 /* Pocket_KayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31AB61A815B4700E4F176 /* Pocket_KayTests.m */; };
+		DAA31AC11A815CA400E4F176 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA31AC01A815CA400E4F176 /* AVFoundation.framework */; };
+		DAA31AC41A81616B00E4F176 /* kay2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AC21A81616B00E4F176 /* kay2.jpg */; };
+		DAA31AC51A81616B00E4F176 /* kay1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AC31A81616B00E4F176 /* kay1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +38,12 @@
 		DAA31AA21A815B4700E4F176 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DAA31AA51A815B4700E4F176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAA31AA71A815B4700E4F176 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DAA31AAA1A815B4700E4F176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DAA31AB01A815B4700E4F176 /* Pocket KayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pocket KayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA31AB51A815B4700E4F176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA31AB61A815B4700E4F176 /* Pocket_KayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pocket_KayTests.m; sourceTree = "<group>"; };
+		DAA31AC01A815CA400E4F176 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DAA31AC21A81616B00E4F176 /* kay2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kay2.jpg; sourceTree = "<group>"; };
+		DAA31AC31A81616B00E4F176 /* kay1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kay1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAA31AC11A815CA400E4F176 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +68,7 @@
 		DAA31A8E1A815B4600E4F176 = {
 			isa = PBXGroup;
 			children = (
+				DAA31AC01A815CA400E4F176 /* AVFoundation.framework */,
 				DAA31A991A815B4700E4F176 /* Pocket Kay */,
 				DAA31AB31A815B4700E4F176 /* Pocket KayTests */,
 				DAA31A981A815B4700E4F176 /* Products */,
@@ -81,13 +87,14 @@
 		DAA31A991A815B4700E4F176 /* Pocket Kay */ = {
 			isa = PBXGroup;
 			children = (
+				DAA31AC21A81616B00E4F176 /* kay2.jpg */,
+				DAA31AC31A81616B00E4F176 /* kay1.jpg */,
 				DAA31A9E1A815B4700E4F176 /* AppDelegate.h */,
 				DAA31A9F1A815B4700E4F176 /* AppDelegate.m */,
 				DAA31AA11A815B4700E4F176 /* ViewController.h */,
 				DAA31AA21A815B4700E4F176 /* ViewController.m */,
 				DAA31AA41A815B4700E4F176 /* Main.storyboard */,
 				DAA31AA71A815B4700E4F176 /* Images.xcassets */,
-				DAA31AA91A815B4700E4F176 /* LaunchScreen.xib */,
 				DAA31A9A1A815B4700E4F176 /* Supporting Files */,
 			);
 			path = "Pocket Kay";
@@ -200,7 +207,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAA31AA61A815B4700E4F176 /* Main.storyboard in Resources */,
-				DAA31AAB1A815B4700E4F176 /* LaunchScreen.xib in Resources */,
+				DAA31AC51A81616B00E4F176 /* kay1.jpg in Resources */,
+				DAA31AC41A81616B00E4F176 /* kay2.jpg in Resources */,
 				DAA31AA81A815B4700E4F176 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,14 +260,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		DAA31AA91A815B4700E4F176 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DAA31AAA1A815B4700E4F176 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -297,7 +297,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -333,7 +333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -345,6 +345,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				INFOPLIST_FILE = "Pocket Kay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,6 +357,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				INFOPLIST_FILE = "Pocket Kay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

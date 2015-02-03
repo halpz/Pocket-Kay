@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <AVSpeechSynthesizerDelegate>
 
+@property (strong, nonatomic) NSArray *quotes;
+@property (strong, nonatomic) UIButton *mainButton;
 
 @end
 
