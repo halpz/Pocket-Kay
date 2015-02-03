@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    srand48(time(0));
     self.mainButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.mainButton.frame = self.view.frame;
     [self.mainButton addTarget:self action:@selector(speak) forControlEvents:UIControlEventTouchUpInside];
@@ -78,11 +79,20 @@
                     @"It's me!. Peter Kay",
                     @"It's Spitting",
                     @"Come and get your black bin bags",
-                    @"Put the big light on"];
+                    @"Put the big light on",
+                    @"How does Bob Marley like his doughnuts? Wi' jam in!",
+                    @"Do you ever dip your biscuit in your tea and it breaks? You panic, it's like slow-motion: 'Mum, get a spoon quick, my biscuit's fallen in my brew!' Hobnobs are like the marines. You dip a Hobnob and they go, 'Again, again!'",
+                    @"Knock Knock. Who's there? Biggish. Biggish who? No, not today thanks.",
+                    @"I met a Dutch girl with inflatable shoes last week, phoned her up to arrange a date but unfortunately she'd popped her clogs.",
+                    @"Two Eskimos sitting in a kayak were chilly; but when they lit a fire in the craft, it sank, proving once and for all that you can't have your kayak and heat it.",
+                    @"You see I'm against hunting, in fact I'm a hunt saboteur. I go out the night before and shoot the fox.",
+                    @"So I went down the local supermarket, I said 'I want to make a complaint, this vinegar's got lumps in it', he said 'Those are pickled onions'.",
+                    @"I saw this bloke chatting up a cheetah, I thought 'he's trying to pull a fast one'.",
+                    @"So I said to the Gym instructor 'Can you teach me to do the splits?'. He said 'How flexible are you?'. I said 'I can't make Tuesdays'.",
+                    @"But I'll tell you what I love doing more than anything: trying to pack myself in a small suitcase. I can hardly contain myself."];
 }
 
 - (void)speak {
-    
     NSUInteger randomIndex = arc4random() % [self.quotes count];
     NSString *string = self.quotes[randomIndex];
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:string];
@@ -106,9 +116,61 @@
     [self.mainButton setImage:[UIImage imageNamed:@"kay2.jpg"] forState:UIControlStateNormal];
     [self performSelector:@selector(sylable) withObject:nil afterDelay:0.1];
 }
+- (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
+        if (!self.lolText) {
+            self.lolText = [[UILabel alloc] initWithFrame:(CGRect){0,0,350,60}];
+            self.lolText.textColor = [UIColor redColor];
+            [self.lolText setFont:[UIFont fontWithName:@"Arial" size:60.0f]];
+            [self.view addSubview:self.lolText];
+        }
+        self.lolText.alpha = 0.0;
+        
+        CGFloat xRange = self.view.frame.size.width - 350;
+        CGFloat yRange = self.view.frame.size.height - 60;
+        
+        CGFloat minX = 0;
+        CGFloat minY = 0;
+        
+        int randomX = (arc4random() % (int)floorf(xRange)) + minX;
+        int randomY = (arc4random() % (int)floorf(yRange)) + minY;
+        self.lolText.frame = (CGRect){randomX,randomY,350,60};
+        
+        NSArray *texts = @[@"LOL!",@"LMAO!",@"XD",@"ROFL!",@"OMG!"];
+        NSUInteger randomIndex = arc4random() % [texts count];
+        NSString *loltxt = texts[randomIndex];
+        
+        self.lolText.text = loltxt;
+        CGFloat randomRotation = drand48();
+        [self.lolText setTransform:CGAffineTransformMakeRotation(randomRotation)];
+    
+    
+        double r = drand48();
+        if (r<1) {
+            [self laughTrack];
+        }
+
+    
+    
+        [UIView animateWithDuration:1.0 animations:^{
+            self.lolText.alpha = 1.0;
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:1.0 animations:^{
+                self.lolText.alpha = 0.0;
+            } completion:^(BOOL finished) {
+                //
+            }];
+        }];
+}
 
 - (void)sylable {
     [self.mainButton setImage:[UIImage imageNamed:@"kay1.jpg"] forState:UIControlStateNormal];
+}
+
+- (void)laughTrack {
+    NSUInteger randomIndex = (arc4random() % 4)+1;
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/laugh%ld.wav",[[NSBundle mainBundle] resourcePath],(unsigned long)randomIndex]];
+    self.laugh = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [self.laugh play];
 }
 
 @end

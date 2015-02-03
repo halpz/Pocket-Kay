@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) NSArray *quotes;
 @property (strong, nonatomic) UIButton *mainButton;
+@property (strong, nonatomic) UILabel *lolText;
+@property (strong, nonatomic) AVAudioPlayer *laugh;
 
 @end
 

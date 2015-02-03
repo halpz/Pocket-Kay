@@ -16,6 +16,10 @@
 		DAA31AC11A815CA400E4F176 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA31AC01A815CA400E4F176 /* AVFoundation.framework */; };
 		DAA31AC41A81616B00E4F176 /* kay2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AC21A81616B00E4F176 /* kay2.jpg */; };
 		DAA31AC51A81616B00E4F176 /* kay1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AC31A81616B00E4F176 /* kay1.jpg */; };
+		DAF90EAB1A817B0E00DBEDB2 /* laugh4.wav in Resources */ = {isa = PBXBuildFile; fileRef = DAF90EA71A817B0E00DBEDB2 /* laugh4.wav */; };
+		DAF90EAC1A817B0E00DBEDB2 /* laugh3.wav in Resources */ = {isa = PBXBuildFile; fileRef = DAF90EA81A817B0E00DBEDB2 /* laugh3.wav */; };
+		DAF90EAD1A817B0E00DBEDB2 /* laugh2.wav in Resources */ = {isa = PBXBuildFile; fileRef = DAF90EA91A817B0E00DBEDB2 /* laugh2.wav */; };
+		DAF90EAE1A817B0E00DBEDB2 /* laugh1.wav in Resources */ = {isa = PBXBuildFile; fileRef = DAF90EAA1A817B0E00DBEDB2 /* laugh1.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		DAA31AC01A815CA400E4F176 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DAA31AC21A81616B00E4F176 /* kay2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kay2.jpg; sourceTree = "<group>"; };
 		DAA31AC31A81616B00E4F176 /* kay1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kay1.jpg; sourceTree = "<group>"; };
+		DAF90EA71A817B0E00DBEDB2 /* laugh4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laugh4.wav; sourceTree = "<group>"; };
+		DAF90EA81A817B0E00DBEDB2 /* laugh3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laugh3.wav; sourceTree = "<group>"; };
+		DAF90EA91A817B0E00DBEDB2 /* laugh2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laugh2.wav; sourceTree = "<group>"; };
+		DAF90EAA1A817B0E00DBEDB2 /* laugh1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laugh1.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,10 @@
 			children = (
 				DAA31AC21A81616B00E4F176 /* kay2.jpg */,
 				DAA31AC31A81616B00E4F176 /* kay1.jpg */,
+				DAF90EA71A817B0E00DBEDB2 /* laugh4.wav */,
+				DAF90EA81A817B0E00DBEDB2 /* laugh3.wav */,
+				DAF90EA91A817B0E00DBEDB2 /* laugh2.wav */,
+				DAF90EAA1A817B0E00DBEDB2 /* laugh1.wav */,
 				DAA31A9E1A815B4700E4F176 /* AppDelegate.h */,
 				DAA31A9F1A815B4700E4F176 /* AppDelegate.m */,
 				DAA31AA11A815B4700E4F176 /* ViewController.h */,
@@ -206,9 +218,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF90EAE1A817B0E00DBEDB2 /* laugh1.wav in Resources */,
 				DAA31AA61A815B4700E4F176 /* Main.storyboard in Resources */,
+				DAF90EAB1A817B0E00DBEDB2 /* laugh4.wav in Resources */,
+				DAF90EAC1A817B0E00DBEDB2 /* laugh3.wav in Resources */,
 				DAA31AC51A81616B00E4F176 /* kay1.jpg in Resources */,
 				DAA31AC41A81616B00E4F176 /* kay2.jpg in Resources */,
+				DAF90EAD1A817B0E00DBEDB2 /* laugh2.wav in Resources */,
 				DAA31AA81A815B4700E4F176 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,7 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Pocket Kay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,6 +434,7 @@
 				DAA31ABC1A815B4700E4F176 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAA31ABD1A815B4700E4F176 /* Build configuration list for PBXNativeTarget "Pocket KayTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +443,7 @@
 				DAA31ABF1A815B4700E4F176 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
