@@ -117,49 +117,39 @@
     [self performSelector:@selector(sylable) withObject:nil afterDelay:0.1];
 }
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
-        if (!self.lolText) {
-            self.lolText = [[UILabel alloc] initWithFrame:(CGRect){0,0,350,60}];
-            self.lolText.textColor = [UIColor redColor];
-            [self.lolText setFont:[UIFont fontWithName:@"Arial" size:60.0f]];
-            [self.view addSubview:self.lolText];
-        }
-        self.lolText.alpha = 0.0;
-        
-        CGFloat xRange = self.view.frame.size.width - 350;
-        CGFloat yRange = self.view.frame.size.height - 60;
-        
-        CGFloat minX = 0;
-        CGFloat minY = 0;
-        
-        int randomX = (arc4random() % (int)floorf(xRange)) + minX;
-        int randomY = (arc4random() % (int)floorf(yRange)) + minY;
-        self.lolText.frame = (CGRect){randomX,randomY,350,60};
-        
-        NSArray *texts = @[@"LOL!",@"LMAO!",@"XD",@"ROFL!",@"OMG!"];
-        NSUInteger randomIndex = arc4random() % [texts count];
-        NSString *loltxt = texts[randomIndex];
-        
-        self.lolText.text = loltxt;
-        CGFloat randomRotation = drand48();
-        [self.lolText setTransform:CGAffineTransformMakeRotation(randomRotation)];
+    //TEXT
+    self.lolText = [[THLabel alloc] init];
+    self.lolText.font = [UIFont fontWithName:@"ComicSansMS" size:60.0];
+    self.lolText.textColor = [UIColor whiteColor];
+    NSArray *texts = @[@"LOL!",@"LMAO!",@"XD",@"ROFL!",@"OMG!",@"So True!",@"Classic Kay!",@"Northern!"];
+    NSUInteger randomIndex = arc4random() % [texts count];
+    NSString *loltxt = texts[randomIndex];
+    self.lolText.text = loltxt;
+    self.lolText.strokeSize = 2.5;
+    self.lolText.strokeColor = [UIColor blackColor];
+    [self.lolText sizeToFit];
+    self.lolText.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:self.lolText];
+    self.lolText.alpha = 0.0;
+    CGFloat newX = arc4random_uniform(self.view.bounds.size.width - self.lolText.bounds.size.width) +
+    self.lolText.bounds.size.width/2;
+    CGFloat newY = arc4random_uniform(self.view.bounds.size.height - self.lolText.bounds.size.height) + self.lolText.bounds.size.height/2;
+    self.lolText.center = CGPointMake(newX, newY);
     
-    
-        double r = drand48();
-        if (r<1) {
-            [self laughTrack];
-        }
+    int r = arc4random_uniform(40) - 20;
+    self.lolText.transform = CGAffineTransformMakeRotation(r/180.0 * M_PI);
 
-    
-    
+    //Laugh & Animation
+    [self laughTrack];
+    [UIView animateWithDuration:1.0 animations:^{
+        self.lolText.alpha = 1.0;
+    } completion:^(BOOL finished) {
         [UIView animateWithDuration:1.0 animations:^{
-            self.lolText.alpha = 1.0;
+            self.lolText.alpha = 0.0;
         } completion:^(BOOL finished) {
-            [UIView animateWithDuration:1.0 animations:^{
-                self.lolText.alpha = 0.0;
-            } completion:^(BOOL finished) {
-                //
-            }];
+            //
         }];
+    }];
 }
 
 - (void)sylable {

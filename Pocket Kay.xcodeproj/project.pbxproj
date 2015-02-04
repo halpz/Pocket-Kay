@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA1E85221A8248130007B403 /* THLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1E85211A8248130007B403 /* THLabel.m */; };
+		DA1E85241A8248640007B403 /* ComicSansMS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA1E85231A8248640007B403 /* ComicSansMS.ttf */; };
 		DAA31A9D1A815B4700E4F176 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31A9C1A815B4700E4F176 /* main.m */; };
 		DAA31AA01A815B4700E4F176 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31A9F1A815B4700E4F176 /* AppDelegate.m */; };
 		DAA31AA31A815B4700E4F176 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31AA21A815B4700E4F176 /* ViewController.m */; };
@@ -33,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA1E85201A8248130007B403 /* THLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THLabel.h; sourceTree = "<group>"; };
+		DA1E85211A8248130007B403 /* THLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THLabel.m; sourceTree = "<group>"; };
+		DA1E85231A8248640007B403 /* ComicSansMS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ComicSansMS.ttf; sourceTree = "<group>"; };
 		DAA31A971A815B4700E4F176 /* Pocket Kay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Kay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA31A9B1A815B4700E4F176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA31A9C1A815B4700E4F176 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +100,9 @@
 		DAA31A991A815B4700E4F176 /* Pocket Kay */ = {
 			isa = PBXGroup;
 			children = (
+				DA1E85201A8248130007B403 /* THLabel.h */,
+				DA1E85211A8248130007B403 /* THLabel.m */,
+				DA1E85231A8248640007B403 /* ComicSansMS.ttf */,
 				DAA31AC21A81616B00E4F176 /* kay2.jpg */,
 				DAA31AC31A81616B00E4F176 /* kay1.jpg */,
 				DAF90EA71A817B0E00DBEDB2 /* laugh4.wav */,
@@ -225,6 +233,7 @@
 				DAA31AC51A81616B00E4F176 /* kay1.jpg in Resources */,
 				DAA31AC41A81616B00E4F176 /* kay2.jpg in Resources */,
 				DAF90EAD1A817B0E00DBEDB2 /* laugh2.wav in Resources */,
+				DA1E85241A8248640007B403 /* ComicSansMS.ttf in Resources */,
 				DAA31AA81A815B4700E4F176 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA1E85221A8248130007B403 /* THLabel.m in Sources */,
 				DAA31AA31A815B4700E4F176 /* ViewController.m in Sources */,
 				DAA31AA01A815B4700E4F176 /* AppDelegate.m in Sources */,
 				DAA31A9D1A815B4700E4F176 /* main.m in Sources */,

@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "THLabel.h"
 
 @interface ViewController : UIViewController <AVSpeechSynthesizerDelegate>
 
 @property (strong, nonatomic) NSArray *quotes;
 @property (strong, nonatomic) UIButton *mainButton;
-@property (strong, nonatomic) UILabel *lolText;
+@property (strong, nonatomic) THLabel *lolText;
 @property (strong, nonatomic) AVAudioPlayer *laugh;
 
 @end
