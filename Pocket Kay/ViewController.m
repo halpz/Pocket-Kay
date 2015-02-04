@@ -18,12 +18,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     srand48(time(0));
+    
+    self.peter = [[UIImageView alloc] initWithFrame:self.view.frame];
+    self.peter.image = [UIImage imageNamed:@"kay1.png"];
+    self.peter.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:self.peter];
+    
+    UIImage *curtain = [UIImage imageNamed:@"curtain.jpg"];
+    UIImage *flippedImage = [UIImage imageWithCGImage:curtain.CGImage scale:curtain.scale orientation:UIImageOrientationUpMirrored];
+    
+    self.leftCurtain = [[UIImageView alloc] initWithFrame:(CGRect){0,0,self.view.frame.size.width*0.5,self.view.frame.size.height}];
+    self.leftCurtain.image = curtain;
+    [self.view addSubview:self.leftCurtain];
+    
+    self.rightCurtain = [[UIImageView alloc] initWithFrame:(CGRect){self.view.frame.size.width*0.5,0,self.view.frame.size.width*0.5,self.view.frame.size.height}];
+    self.rightCurtain.image = flippedImage;
+    [self.view addSubview:self.rightCurtain];
+    
+    
     self.mainButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.mainButton.frame = self.view.frame;
-    [self.mainButton addTarget:self action:@selector(speak) forControlEvents:UIControlEventTouchUpInside];
-    [self.mainButton setImage:[UIImage imageNamed:@"kay1.jpg"] forState:UIControlStateNormal];
+    self.mainButton.backgroundColor = [UIColor clearColor];
+    [self.mainButton addTarget:self action:@selector(openCurtain) forControlEvents:UIControlEventTouchUpInside];
+    
+//    [self.mainButton setImage:[UIImage imageNamed:@"kay1.png"] forState:UIControlStateNormal];
     self.mainButton.showsTouchWhenHighlighted = NO;
+    
     [self.view addSubview:self.mainButton];
+    self.view.backgroundColor = [UIColor blackColor];
     self.quotes = @[@"I saw a fat woman wearing a sweatshirt with 'Guess' on it. I said 'Thyroid problem?'",
                     @"When I was a kid I used to pray every night for a new bike. Then I realised that The Lord doesn't work that way, so I stole one and asked him to forgive me.",
                     @"I've often wanted to drown my troubles, but I can't get my wife to go swimming.",
@@ -89,7 +111,23 @@
                     @"So I went down the local supermarket, I said 'I want to make a complaint, this vinegar's got lumps in it', he said 'Those are pickled onions'.",
                     @"I saw this bloke chatting up a cheetah, I thought 'he's trying to pull a fast one'.",
                     @"So I said to the Gym instructor 'Can you teach me to do the splits?'. He said 'How flexible are you?'. I said 'I can't make Tuesdays'.",
-                    @"But I'll tell you what I love doing more than anything: trying to pack myself in a small suitcase. I can hardly contain myself."];
+                    @"But I'll tell you what I love doing more than anything: trying to pack myself in a small suitcase. I can hardly contain myself.",
+                    @"So I was having dinner with Garry Kasporov (world chess champion) and there was a check tablecloth. It took him two hours to pass me the salt. He said, 'You remind me of a pepper-pot', I said 'I'll take that as a condiment'. ",
+                    @"So a lorry-load of tortoises crashed into a trainload of terrapins, I thought, 'That's a turtle disaster'.",
+                    @"Rummaging in an overgrown garden will always turn up a bouncy ball."];
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        [self colours];
+//    });
+    
+}
+
+- (void)openCurtain {
+    [UIView animateWithDuration:0.5 animations:^{
+        self.leftCurtain.frame = (CGRect){-self.view.frame.size.width*0.5,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
+        self.rightCurtain.frame = (CGRect){self.view.frame.size.width,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
+    } completion:^(BOOL finished) {
+        [self speak];
+    }];
 }
 
 - (void)speak {
@@ -111,12 +149,15 @@
 }
 
 #pragma mark - AVSpeechSynthesizerDelegate
-
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer willSpeakRangeOfSpeechString:(NSRange)characterRange utterance:(AVSpeechUtterance *)utterance {
-    [self.mainButton setImage:[UIImage imageNamed:@"kay2.jpg"] forState:UIControlStateNormal];
+    [self.peter setImage:[UIImage imageNamed:@"kay2.png"]];
     [self performSelector:@selector(sylable) withObject:nil afterDelay:0.1];
 }
+- (void)sylable {
+    [self.peter setImage:[UIImage imageNamed:@"kay1.png"]];
+}
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
+    
     //TEXT
     self.lolText = [[THLabel alloc] init];
     self.lolText.font = [UIFont fontWithName:@"ComicSansMS" size:60.0];
@@ -135,7 +176,6 @@
     self.lolText.bounds.size.width/2;
     CGFloat newY = arc4random_uniform(self.view.bounds.size.height - self.lolText.bounds.size.height) + self.lolText.bounds.size.height/2;
     self.lolText.center = CGPointMake(newX, newY);
-    
     int r = arc4random_uniform(40) - 20;
     self.lolText.transform = CGAffineTransformMakeRotation(r/180.0 * M_PI);
 
@@ -146,14 +186,12 @@
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:1.0 animations:^{
             self.lolText.alpha = 0.0;
+            self.leftCurtain.frame = (CGRect){0,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
+            self.rightCurtain.frame = (CGRect){self.view.frame.size.width*0.5,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
         } completion:^(BOOL finished) {
-            //
+            self.lolText = nil;
         }];
     }];
-}
-
-- (void)sylable {
-    [self.mainButton setImage:[UIImage imageNamed:@"kay1.jpg"] forState:UIControlStateNormal];
 }
 
 - (void)laughTrack {
@@ -162,5 +200,14 @@
     self.laugh = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [self.laugh play];
 }
+
+//- (void)colours {
+//    UIColor *randColour = [UIColor colorWithRed:drand48() green:drand48() blue:drand48() alpha:1.0];
+//    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+//        self.view.backgroundColor = randColour;
+//    } completion:^(BOOL finished) {
+//        [self colours];
+//    }];
+//}
 
 @end

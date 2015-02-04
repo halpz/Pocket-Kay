@@ -16,8 +16,9 @@
 		DAA31AA81A815B4700E4F176 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AA71A815B4700E4F176 /* Images.xcassets */; };
 		DAA31AB71A815B4700E4F176 /* Pocket_KayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31AB61A815B4700E4F176 /* Pocket_KayTests.m */; };
 		DAA31AC11A815CA400E4F176 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA31AC01A815CA400E4F176 /* AVFoundation.framework */; };
-		DAA31AC41A81616B00E4F176 /* kay2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AC21A81616B00E4F176 /* kay2.jpg */; };
-		DAA31AC51A81616B00E4F176 /* kay1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AC31A81616B00E4F176 /* kay1.jpg */; };
+		DAA6BB5B1A826E46001B5530 /* kay1.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA6BB591A826E46001B5530 /* kay1.png */; };
+		DAA6BB5C1A826E46001B5530 /* kay2.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA6BB5A1A826E46001B5530 /* kay2.png */; };
+		DAA6BB5E1A826F34001B5530 /* curtain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAA6BB5D1A826F34001B5530 /* curtain.jpg */; };
 		DAF90EAB1A817B0E00DBEDB2 /* laugh4.wav in Resources */ = {isa = PBXBuildFile; fileRef = DAF90EA71A817B0E00DBEDB2 /* laugh4.wav */; };
 		DAF90EAC1A817B0E00DBEDB2 /* laugh3.wav in Resources */ = {isa = PBXBuildFile; fileRef = DAF90EA81A817B0E00DBEDB2 /* laugh3.wav */; };
 		DAF90EAD1A817B0E00DBEDB2 /* laugh2.wav in Resources */ = {isa = PBXBuildFile; fileRef = DAF90EA91A817B0E00DBEDB2 /* laugh2.wav */; };
@@ -51,8 +52,9 @@
 		DAA31AB51A815B4700E4F176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA31AB61A815B4700E4F176 /* Pocket_KayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pocket_KayTests.m; sourceTree = "<group>"; };
 		DAA31AC01A815CA400E4F176 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		DAA31AC21A81616B00E4F176 /* kay2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kay2.jpg; sourceTree = "<group>"; };
-		DAA31AC31A81616B00E4F176 /* kay1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kay1.jpg; sourceTree = "<group>"; };
+		DAA6BB591A826E46001B5530 /* kay1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kay1.png; sourceTree = "<group>"; };
+		DAA6BB5A1A826E46001B5530 /* kay2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kay2.png; sourceTree = "<group>"; };
+		DAA6BB5D1A826F34001B5530 /* curtain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = curtain.jpg; sourceTree = "<group>"; };
 		DAF90EA71A817B0E00DBEDB2 /* laugh4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laugh4.wav; sourceTree = "<group>"; };
 		DAF90EA81A817B0E00DBEDB2 /* laugh3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laugh3.wav; sourceTree = "<group>"; };
 		DAF90EA91A817B0E00DBEDB2 /* laugh2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laugh2.wav; sourceTree = "<group>"; };
@@ -102,9 +104,10 @@
 			children = (
 				DA1E85201A8248130007B403 /* THLabel.h */,
 				DA1E85211A8248130007B403 /* THLabel.m */,
+				DAA6BB5D1A826F34001B5530 /* curtain.jpg */,
 				DA1E85231A8248640007B403 /* ComicSansMS.ttf */,
-				DAA31AC21A81616B00E4F176 /* kay2.jpg */,
-				DAA31AC31A81616B00E4F176 /* kay1.jpg */,
+				DAA6BB591A826E46001B5530 /* kay1.png */,
+				DAA6BB5A1A826E46001B5530 /* kay2.png */,
 				DAF90EA71A817B0E00DBEDB2 /* laugh4.wav */,
 				DAF90EA81A817B0E00DBEDB2 /* laugh3.wav */,
 				DAF90EA91A817B0E00DBEDB2 /* laugh2.wav */,
@@ -227,14 +230,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAF90EAE1A817B0E00DBEDB2 /* laugh1.wav in Resources */,
+				DAA6BB5B1A826E46001B5530 /* kay1.png in Resources */,
 				DAA31AA61A815B4700E4F176 /* Main.storyboard in Resources */,
 				DAF90EAB1A817B0E00DBEDB2 /* laugh4.wav in Resources */,
 				DAF90EAC1A817B0E00DBEDB2 /* laugh3.wav in Resources */,
-				DAA31AC51A81616B00E4F176 /* kay1.jpg in Resources */,
-				DAA31AC41A81616B00E4F176 /* kay2.jpg in Resources */,
 				DAF90EAD1A817B0E00DBEDB2 /* laugh2.wav in Resources */,
+				DAA6BB5E1A826F34001B5530 /* curtain.jpg in Resources */,
 				DA1E85241A8248640007B403 /* ComicSansMS.ttf in Resources */,
 				DAA31AA81A815B4700E4F176 /* Images.xcassets in Resources */,
+				DAA6BB5C1A826E46001B5530 /* kay2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
