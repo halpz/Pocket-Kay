@@ -122,6 +122,7 @@
 }
 
 - (void)openCurtain {
+    self.mainButton.userInteractionEnabled = NO;
     [UIView animateWithDuration:0.5 animations:^{
         self.leftCurtain.frame = (CGRect){-self.view.frame.size.width*0.5,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
         self.rightCurtain.frame = (CGRect){self.view.frame.size.width,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
@@ -184,6 +185,7 @@
     [UIView animateWithDuration:1.0 animations:^{
         self.lolText.alpha = 1.0;
     } completion:^(BOOL finished) {
+        self.mainButton.userInteractionEnabled = YES;
         [UIView animateWithDuration:1.0 animations:^{
             self.lolText.alpha = 0.0;
             self.leftCurtain.frame = (CGRect){0,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
