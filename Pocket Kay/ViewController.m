@@ -41,7 +41,6 @@
     self.mainButton.backgroundColor = [UIColor clearColor];
     [self.mainButton addTarget:self action:@selector(openCurtain) forControlEvents:UIControlEventTouchUpInside];
     
-//    [self.mainButton setImage:[UIImage imageNamed:@"kay1.png"] forState:UIControlStateNormal];
     self.mainButton.showsTouchWhenHighlighted = NO;
     
     [self.view addSubview:self.mainButton];
