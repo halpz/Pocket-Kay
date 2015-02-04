@@ -105,7 +105,7 @@
                     @"Do you ever dip your biscuit in your tea and it breaks? You panic, it's like slow-motion: 'Mum, get a spoon quick, my biscuit's fallen in my brew!' Hobnobs are like the marines. You dip a Hobnob and they go, 'Again, again!'",
                     @"Knock Knock. Who's there? Biggish. Biggish who? No, not today thanks.",
                     @"I met a Dutch girl with inflatable shoes last week, phoned her up to arrange a date but unfortunately she'd popped her clogs.",
-                    @"Two Eskimos sitting in a kayak were chilly; but when they lit a fire in the craft, it sank, proving once and for all that you can't have your kayak and heat it.",
+                    @"Two Chilly Eskimos sitting in a kayak; but when they lit a fire in the craft, it sank, proving once and for all that you can't have your kayak and heat it.",
                     @"You see I'm against hunting, in fact I'm a hunt saboteur. I go out the night before and shoot the fox.",
                     @"So I went down the local supermarket, I said 'I want to make a complaint, this vinegar's got lumps in it', he said 'Those are pickled onions'.",
                     @"I saw this bloke chatting up a cheetah, I thought 'he's trying to pull a fast one'.",
@@ -113,7 +113,8 @@
                     @"But I'll tell you what I love doing more than anything: trying to pack myself in a small suitcase. I can hardly contain myself.",
                     @"So I was having dinner with Garry Kasporov (world chess champion) and there was a check tablecloth. It took him two hours to pass me the salt. He said, 'You remind me of a pepper-pot', I said 'I'll take that as a condiment'. ",
                     @"So a lorry-load of tortoises crashed into a trainload of terrapins, I thought, 'That's a turtle disaster'.",
-                    @"Rummaging in an overgrown garden will always turn up a bouncy ball."];
+                    @"Rummaging in an overgrown garden will always turn up a bouncy ball.",
+                    @"Get back, you bastard. I'll break your legs!"];
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        [self colours];
 //    });
@@ -162,7 +163,7 @@
     self.lolText = [[THLabel alloc] init];
     self.lolText.font = [UIFont fontWithName:@"ComicSansMS" size:60.0];
     self.lolText.textColor = [UIColor whiteColor];
-    NSArray *texts = @[@"LOL!",@"LMAO!",@"XD",@"ROFL!",@"OMG!",@"So True!",@"Classic Kay!",@"Northern!"];
+    NSArray *texts = @[@"LOL!",@"LMAO!",@"ROFL!",@"OMG!",@"So True!",@"Classic Kay!",@"Northern!",@"He's Right!",[NSString stringWithFormat:@"%C", 0xe404],[NSString stringWithFormat:@"%C", 0xe412],[NSString stringWithFormat:@"%C", 0xe409]];
     NSUInteger randomIndex = arc4random() % [texts count];
     NSString *loltxt = texts[randomIndex];
     self.lolText.text = loltxt;
