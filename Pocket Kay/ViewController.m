@@ -42,7 +42,7 @@
     [self.mainButton addTarget:self action:@selector(openCurtain) forControlEvents:UIControlEventTouchUpInside];
     
     self.mainButton.showsTouchWhenHighlighted = NO;
-    
+    self.mainButton.userInteractionEnabled = NO;
     [self.view addSubview:self.mainButton];
     self.view.backgroundColor = [UIColor blackColor];
     self.quotes = @[@"I saw a fat woman wearing a sweatshirt with 'Guess' on it. I said 'Thyroid problem?'",
@@ -119,6 +119,30 @@
 //        [self colours];
 //    });
     
+    [self performSelector:@selector(paddy) withObject:nil afterDelay:1.0];
+    
+}
+
+- (void)paddy {
+    paddyMode = YES;
+    
+    self.leftPaddy = [[UIImageView alloc] initWithFrame:(CGRect){0,0,self.view.frame.size.width*0.5,self.view.frame.size.height}];
+    self.rightPaddy = [[UIImageView alloc] initWithFrame:(CGRect){self.view.frame.size.width*0.5,0,self.view.frame.size.width*0.5,self.view.frame.size.height}];
+    self.leftPaddy.contentMode = UIViewContentModeScaleAspectFit;
+    self.rightPaddy.contentMode = UIViewContentModeScaleAspectFit;
+    self.leftPaddy.image = [UIImage imageNamed:@"beforehand.png"];
+    self.rightPaddy.image = [UIImage imageNamed:@"pad1.png"];
+    [self.view addSubview:self.leftPaddy];
+    [self.view addSubview:self.rightPaddy];
+    
+    AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:@"Let the Peter. See the Kay!"];
+    utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
+    utterance.rate = 0.05;
+    
+    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
+    synthesizer.delegate = self;
+    [synthesizer pauseSpeakingAtBoundary:AVSpeechBoundaryWord];
+    [synthesizer speakUtterance:utterance];
 }
 
 - (void)openCurtain {
@@ -151,13 +175,40 @@
 
 #pragma mark - AVSpeechSynthesizerDelegate
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer willSpeakRangeOfSpeechString:(NSRange)characterRange utterance:(AVSpeechUtterance *)utterance {
-    [self.peter setImage:[UIImage imageNamed:@"kay2.png"]];
-    [self performSelector:@selector(sylable) withObject:nil afterDelay:0.1];
+    
+    if (paddyMode) {
+        [self.rightPaddy setImage:[UIImage imageNamed:@"pad2.png"]];
+        [self performSelector:@selector(sylable) withObject:nil afterDelay:0.1];
+    } else {
+        [self.peter setImage:[UIImage imageNamed:@"kay2.png"]];
+        [self performSelector:@selector(sylable) withObject:nil afterDelay:0.1];
+    }
 }
 - (void)sylable {
-    [self.peter setImage:[UIImage imageNamed:@"kay1.png"]];
+    if (paddyMode) {
+        [self.rightPaddy setImage:[UIImage imageNamed:@"pad1.png"]];
+        count++;
+        if (count == 5) {
+            [self.leftPaddy setImage:[UIImage imageNamed:@"afterhand.png"]];
+        }
+    } else {
+        [self.peter setImage:[UIImage imageNamed:@"kay1.png"]];
+    }
 }
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
+    
+    if (paddyMode) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.leftPaddy.frame = (CGRect){0,self.view.frame.size.height,self.view.frame.size.width*0.5,self.view.frame.size.height};
+            self.rightPaddy.frame = (CGRect){self.view.frame.size.width*0.5,self.view.frame.size.height,self.view.frame.size.width*0.5,self.view.frame.size.height};
+        } completion:^(BOOL finished) {
+            [self.leftPaddy removeFromSuperview];
+            [self.rightPaddy removeFromSuperview];
+            self.mainButton.userInteractionEnabled = YES;
+            paddyMode = NO;
+            return;
+        }];
+    }
     
     //TEXT
     self.lolText = [[THLabel alloc] init];

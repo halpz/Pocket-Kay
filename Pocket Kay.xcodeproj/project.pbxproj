@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		DA1E85221A8248130007B403 /* THLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1E85211A8248130007B403 /* THLabel.m */; };
 		DA1E85241A8248640007B403 /* ComicSansMS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA1E85231A8248640007B403 /* ComicSansMS.ttf */; };
+		DA2D8A971A82D9D6003CA5B0 /* afterhand.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2D8A931A82D9D6003CA5B0 /* afterhand.png */; };
+		DA2D8A981A82D9D6003CA5B0 /* beforehand.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2D8A941A82D9D6003CA5B0 /* beforehand.png */; };
+		DA2D8A991A82D9D6003CA5B0 /* pad1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2D8A951A82D9D6003CA5B0 /* pad1.png */; };
+		DA2D8A9A1A82D9D6003CA5B0 /* pad2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA2D8A961A82D9D6003CA5B0 /* pad2.png */; };
 		DAA31A9D1A815B4700E4F176 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31A9C1A815B4700E4F176 /* main.m */; };
 		DAA31AA01A815B4700E4F176 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31A9F1A815B4700E4F176 /* AppDelegate.m */; };
 		DAA31AA31A815B4700E4F176 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31AA21A815B4700E4F176 /* ViewController.m */; };
@@ -39,6 +43,10 @@
 		DA1E85201A8248130007B403 /* THLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THLabel.h; sourceTree = "<group>"; };
 		DA1E85211A8248130007B403 /* THLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THLabel.m; sourceTree = "<group>"; };
 		DA1E85231A8248640007B403 /* ComicSansMS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ComicSansMS.ttf; sourceTree = "<group>"; };
+		DA2D8A931A82D9D6003CA5B0 /* afterhand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afterhand.png; sourceTree = "<group>"; };
+		DA2D8A941A82D9D6003CA5B0 /* beforehand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beforehand.png; sourceTree = "<group>"; };
+		DA2D8A951A82D9D6003CA5B0 /* pad1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad1.png; sourceTree = "<group>"; };
+		DA2D8A961A82D9D6003CA5B0 /* pad2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad2.png; sourceTree = "<group>"; };
 		DAA31A971A815B4700E4F176 /* Pocket Kay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Kay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA31A9B1A815B4700E4F176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA31A9C1A815B4700E4F176 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,6 +88,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA2D8A921A82D9D6003CA5B0 /* paddy */ = {
+			isa = PBXGroup;
+			children = (
+				DA2D8A931A82D9D6003CA5B0 /* afterhand.png */,
+				DA2D8A941A82D9D6003CA5B0 /* beforehand.png */,
+				DA2D8A951A82D9D6003CA5B0 /* pad1.png */,
+				DA2D8A961A82D9D6003CA5B0 /* pad2.png */,
+			);
+			path = paddy;
+			sourceTree = "<group>";
+		};
 		DAA31A8E1A815B4600E4F176 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +121,7 @@
 		DAA31A991A815B4700E4F176 /* Pocket Kay */ = {
 			isa = PBXGroup;
 			children = (
+				DA2D8A921A82D9D6003CA5B0 /* paddy */,
 				DA1E85201A8248130007B403 /* THLabel.h */,
 				DA1E85211A8248130007B403 /* THLabel.m */,
 				DAA6BB5D1A826F34001B5530 /* curtain.jpg */,
@@ -235,8 +255,12 @@
 				DAF90EAB1A817B0E00DBEDB2 /* laugh4.wav in Resources */,
 				DAF90EAC1A817B0E00DBEDB2 /* laugh3.wav in Resources */,
 				DAF90EAD1A817B0E00DBEDB2 /* laugh2.wav in Resources */,
+				DA2D8A9A1A82D9D6003CA5B0 /* pad2.png in Resources */,
 				DAA6BB5E1A826F34001B5530 /* curtain.jpg in Resources */,
+				DA2D8A981A82D9D6003CA5B0 /* beforehand.png in Resources */,
+				DA2D8A991A82D9D6003CA5B0 /* pad1.png in Resources */,
 				DA1E85241A8248640007B403 /* ComicSansMS.ttf in Resources */,
+				DA2D8A971A82D9D6003CA5B0 /* afterhand.png in Resources */,
 				DAA31AA81A815B4700E4F176 /* Images.xcassets in Resources */,
 				DAA6BB5C1A826E46001B5530 /* kay2.png in Resources */,
 			);
