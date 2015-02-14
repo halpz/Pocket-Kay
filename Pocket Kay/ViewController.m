@@ -119,6 +119,12 @@
 //        [self colours];
 //    });
     
+    UIImage *kayText = [UIImage imageNamed:@"kaytext.png"];
+    kayTextHeight = (kayText.size.height/kayText.size.width) * self.view.frame.size.width * 0.8;
+    self.kayText = [[UIImageView alloc] initWithFrame:(CGRect){self.view.frame.size.width*0.1,50,self.view.frame.size.width*0.8,kayTextHeight}];
+    self.kayText.image = kayText;
+    [self.view addSubview:self.kayText];
+    
     [self performSelector:@selector(paddy) withObject:nil afterDelay:1.0];
     
 }
@@ -201,9 +207,11 @@
         [UIView animateWithDuration:0.5 animations:^{
             self.leftPaddy.frame = (CGRect){0,self.view.frame.size.height,self.view.frame.size.width*0.5,self.view.frame.size.height};
             self.rightPaddy.frame = (CGRect){self.view.frame.size.width*0.5,self.view.frame.size.height,self.view.frame.size.width*0.5,self.view.frame.size.height};
+            self.kayText.frame = CGRectOffset(self.kayText.frame, 0, -kayTextHeight-50);
         } completion:^(BOOL finished) {
             [self.leftPaddy removeFromSuperview];
             [self.rightPaddy removeFromSuperview];
+            [self.kayText removeFromSuperview];
             self.mainButton.userInteractionEnabled = YES;
             paddyMode = NO;
             return;
