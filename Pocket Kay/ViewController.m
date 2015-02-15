@@ -14,6 +14,10 @@
 
 @implementation ViewController
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -115,22 +119,14 @@
                     @"So a lorry-load of tortoises crashed into a trainload of terrapins, I thought, 'That's a turtle disaster'.",
                     @"Rummaging in an overgrown garden will always turn up a bouncy ball.",
                     @"Get back, you bastard. I'll break your legs!"];
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        [self colours];
-//    });
     
     UIImage *kayText = [UIImage imageNamed:@"kaytext.png"];
-    kayTextHeight = (kayText.size.height/kayText.size.width) * self.view.frame.size.width * 0.8;
-    self.kayText = [[UIImageView alloc] initWithFrame:(CGRect){self.view.frame.size.width*0.1,50,self.view.frame.size.width*0.8,kayTextHeight}];
+    CGFloat textHeight = (kayText.size.height/kayText.size.width) * self.view.frame.size.width * 0.8;
+    textFrame1 = (CGRect){self.view.frame.size.width*0.1,50,self.view.frame.size.width*0.8,textHeight};
+    textFrame0 = CGRectOffset(textFrame1, 0, -(textHeight+50));
+    self.kayText = [[UIImageView alloc] initWithFrame:textFrame1];
     self.kayText.image = kayText;
     [self.view addSubview:self.kayText];
-    
-    [self performSelector:@selector(paddy) withObject:nil afterDelay:1.0];
-    
-}
-
-- (void)paddy {
-    paddyMode = YES;
     
     self.leftPaddy = [[UIImageView alloc] initWithFrame:(CGRect){0,0,self.view.frame.size.width*0.5,self.view.frame.size.height}];
     self.rightPaddy = [[UIImageView alloc] initWithFrame:(CGRect){self.view.frame.size.width*0.5,0,self.view.frame.size.width*0.5,self.view.frame.size.height}];
@@ -140,6 +136,12 @@
     self.rightPaddy.image = [UIImage imageNamed:@"pad1.png"];
     [self.view addSubview:self.leftPaddy];
     [self.view addSubview:self.rightPaddy];
+    [self performSelector:@selector(paddy) withObject:nil afterDelay:1.0];
+    
+}
+
+- (void)paddy {
+    paddyMode = YES;
     
     AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:@"Let the Peter. See the Kay!"];
     utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
@@ -156,6 +158,7 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.leftCurtain.frame = (CGRect){-self.view.frame.size.width*0.5,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
         self.rightCurtain.frame = (CGRect){self.view.frame.size.width,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
+        self.kayText.frame = textFrame0;
     } completion:^(BOOL finished) {
         [self speak];
     }];
@@ -176,7 +179,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - AVSpeechSynthesizerDelegate
@@ -207,11 +209,9 @@
         [UIView animateWithDuration:0.5 animations:^{
             self.leftPaddy.frame = (CGRect){0,self.view.frame.size.height,self.view.frame.size.width*0.5,self.view.frame.size.height};
             self.rightPaddy.frame = (CGRect){self.view.frame.size.width*0.5,self.view.frame.size.height,self.view.frame.size.width*0.5,self.view.frame.size.height};
-            self.kayText.frame = CGRectOffset(self.kayText.frame, 0, -kayTextHeight-50);
         } completion:^(BOOL finished) {
             [self.leftPaddy removeFromSuperview];
             [self.rightPaddy removeFromSuperview];
-            [self.kayText removeFromSuperview];
             self.mainButton.userInteractionEnabled = YES;
             paddyMode = NO;
             return;
@@ -249,6 +249,7 @@
             self.lolText.alpha = 0.0;
             self.leftCurtain.frame = (CGRect){0,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
             self.rightCurtain.frame = (CGRect){self.view.frame.size.width*0.5,0,self.view.frame.size.width*0.5,self.view.frame.size.height};
+            self.kayText.frame = textFrame1;
         } completion:^(BOOL finished) {
             self.lolText = nil;
         }];
@@ -261,14 +262,5 @@
     self.laugh = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [self.laugh play];
 }
-
-//- (void)colours {
-//    UIColor *randColour = [UIColor colorWithRed:drand48() green:drand48() blue:drand48() alpha:1.0];
-//    [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-//        self.view.backgroundColor = randColour;
-//    } completion:^(BOOL finished) {
-//        [self colours];
-//    }];
-//}
 
 @end

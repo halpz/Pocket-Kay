@@ -13,7 +13,7 @@
 @interface ViewController : UIViewController <AVSpeechSynthesizerDelegate> {
     BOOL paddyMode;
     int count;
-    CGFloat kayTextHeight;
+    CGRect textFrame1, textFrame0;
 }
 
 @property (strong, nonatomic) NSArray *quotes;
