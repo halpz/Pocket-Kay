@@ -120,10 +120,11 @@
                     @"Rummaging in an overgrown garden will always turn up a bouncy ball.",
                     @"Get back, you bastard. I'll break your legs!"];
     
+    int textOffset = 80;
     UIImage *kayText = [UIImage imageNamed:@"kaytext.png"];
     CGFloat textHeight = (kayText.size.height/kayText.size.width) * self.view.frame.size.width * 0.8;
-    textFrame1 = (CGRect){self.view.frame.size.width*0.1,50,self.view.frame.size.width*0.8,textHeight};
-    textFrame0 = CGRectOffset(textFrame1, 0, -(textHeight+50));
+    textFrame1 = (CGRect){self.view.frame.size.width*0.1,textOffset,self.view.frame.size.width*0.8,textHeight};
+    textFrame0 = CGRectOffset(textFrame1, 0, -(textHeight+textOffset));
     self.kayText = [[UIImageView alloc] initWithFrame:textFrame1];
     self.kayText.image = kayText;
     [self.view addSubview:self.kayText];
