@@ -11,9 +11,9 @@
 #import "THLabel.h"
 
 @interface ViewController : UIViewController <AVSpeechSynthesizerDelegate> {
-    BOOL paddyMode;
-    int count;
-    CGRect textFrame1, textFrame0;
+	BOOL paddyMode;
+	int count;
+	CGRect textFrame1, textFrame0;
 }
 
 @property (strong, nonatomic) NSArray *quotes;
@@ -30,4 +30,3 @@
 @property (strong, nonatomic) AVAudioPlayer *laugh;
 
 @end
-
