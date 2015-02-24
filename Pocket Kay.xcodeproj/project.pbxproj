@@ -62,6 +62,7 @@
 		DAA31AB51A815B4700E4F176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA31AB61A815B4700E4F176 /* Pocket_KayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pocket_KayTests.m; sourceTree = "<group>"; };
 		DAA31AC01A815CA400E4F176 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DAA613351A9D338F00537CBA /* kayicon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = kayicon.psd; sourceTree = "<group>"; };
 		DAA6BB591A826E46001B5530 /* kay1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kay1.png; sourceTree = "<group>"; };
 		DAA6BB5A1A826E46001B5530 /* kay2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kay2.png; sourceTree = "<group>"; };
 		DAA6BB5D1A826F34001B5530 /* curtain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = curtain.jpg; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 		DAA31A991A815B4700E4F176 /* Pocket Kay */ = {
 			isa = PBXGroup;
 			children = (
+				DAA613351A9D338F00537CBA /* kayicon.psd */,
 				DA2D8A921A82D9D6003CA5B0 /* paddy */,
 				DA1E85201A8248130007B403 /* THLabel.h */,
 				DA1E85211A8248130007B403 /* THLabel.m */,
