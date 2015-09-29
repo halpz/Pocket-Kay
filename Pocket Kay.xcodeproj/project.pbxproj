@@ -19,7 +19,6 @@
 		DAA31AA31A815B4700E4F176 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31AA21A815B4700E4F176 /* ViewController.m */; };
 		DAA31AA61A815B4700E4F176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AA41A815B4700E4F176 /* Main.storyboard */; };
 		DAA31AA81A815B4700E4F176 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAA31AA71A815B4700E4F176 /* Images.xcassets */; };
-		DAA31AB71A815B4700E4F176 /* Pocket_KayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAA31AB61A815B4700E4F176 /* Pocket_KayTests.m */; };
 		DAA31AC11A815CA400E4F176 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAA31AC01A815CA400E4F176 /* AVFoundation.framework */; };
 		DAA6BB5B1A826E46001B5530 /* kay1.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA6BB591A826E46001B5530 /* kay1.png */; };
 		DAA6BB5C1A826E46001B5530 /* kay2.png in Resources */ = {isa = PBXBuildFile; fileRef = DAA6BB5A1A826E46001B5530 /* kay2.png */; };
@@ -29,16 +28,6 @@
 		DAF90EAD1A817B0E00DBEDB2 /* laugh2.wav in Resources */ = {isa = PBXBuildFile; fileRef = DAF90EA91A817B0E00DBEDB2 /* laugh2.wav */; };
 		DAF90EAE1A817B0E00DBEDB2 /* laugh1.wav in Resources */ = {isa = PBXBuildFile; fileRef = DAF90EAA1A817B0E00DBEDB2 /* laugh1.wav */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DAA31AB11A815B4700E4F176 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DAA31A8F1A815B4600E4F176 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DAA31A961A815B4700E4F176;
-			remoteInfo = "Pocket Kay";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DA1E85201A8248130007B403 /* THLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THLabel.h; sourceTree = "<group>"; };
@@ -58,7 +47,6 @@
 		DAA31AA21A815B4700E4F176 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DAA31AA51A815B4700E4F176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAA31AA71A815B4700E4F176 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DAA31AB01A815B4700E4F176 /* Pocket KayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pocket KayTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAA31AB51A815B4700E4F176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAA31AB61A815B4700E4F176 /* Pocket_KayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pocket_KayTests.m; sourceTree = "<group>"; };
 		DAA31AC01A815CA400E4F176 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -78,13 +66,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAA31AC11A815CA400E4F176 /* AVFoundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DAA31AAD1A815B4700E4F176 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				DAA31A971A815B4700E4F176 /* Pocket Kay.app */,
-				DAA31AB01A815B4700E4F176 /* Pocket KayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,24 +174,6 @@
 			productReference = DAA31A971A815B4700E4F176 /* Pocket Kay.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DAA31AAF1A815B4700E4F176 /* Pocket KayTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DAA31ABD1A815B4700E4F176 /* Build configuration list for PBXNativeTarget "Pocket KayTests" */;
-			buildPhases = (
-				DAA31AAC1A815B4700E4F176 /* Sources */,
-				DAA31AAD1A815B4700E4F176 /* Frameworks */,
-				DAA31AAE1A815B4700E4F176 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DAA31AB21A815B4700E4F176 /* PBXTargetDependency */,
-			);
-			name = "Pocket KayTests";
-			productName = "Pocket KayTests";
-			productReference = DAA31AB01A815B4700E4F176 /* Pocket KayTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -224,10 +186,6 @@
 					DAA31A961A815B4700E4F176 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 942GRELLQU;
-					};
-					DAA31AAF1A815B4700E4F176 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = DAA31A961A815B4700E4F176;
 					};
 				};
 			};
@@ -245,7 +203,6 @@
 			projectRoot = "";
 			targets = (
 				DAA31A961A815B4700E4F176 /* Pocket Kay */,
-				DAA31AAF1A815B4700E4F176 /* Pocket KayTests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,13 +230,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAA31AAE1A815B4700E4F176 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -294,23 +244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAA31AAC1A815B4700E4F176 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAA31AB71A815B4700E4F176 /* Pocket_KayTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DAA31AB21A815B4700E4F176 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DAA31A961A815B4700E4F176 /* Pocket Kay */;
-			targetProxy = DAA31AB11A815B4700E4F176 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DAA31AA41A815B4700E4F176 /* Main.storyboard */ = {
@@ -407,7 +341,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Pocket Kay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -422,7 +356,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				INFOPLIST_FILE = "Pocket Kay/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -430,42 +364,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		DAA31ABE1A815B4700E4F176 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Pocket KayTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.paulhalpin.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pocket Kay.app/Pocket Kay";
-			};
-			name = Debug;
-		};
-		DAA31ABF1A815B4700E4F176 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Pocket KayTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.paulhalpin.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pocket Kay.app/Pocket Kay";
 			};
 			name = Release;
 		};
@@ -486,15 +384,6 @@
 			buildConfigurations = (
 				DAA31ABB1A815B4700E4F176 /* Debug */,
 				DAA31ABC1A815B4700E4F176 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DAA31ABD1A815B4700E4F176 /* Build configuration list for PBXNativeTarget "Pocket KayTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DAA31ABE1A815B4700E4F176 /* Debug */,
-				DAA31ABF1A815B4700E4F176 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
