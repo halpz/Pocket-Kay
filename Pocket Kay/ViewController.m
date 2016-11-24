@@ -138,6 +138,21 @@
 	[self.view addSubview:self.leftPaddy];
 	[self.view addSubview:self.rightPaddy];
 	[self performSelector:@selector(paddy) withObject:nil afterDelay:1.0];
+    
+    [self makeCaption];
+    
+}
+
+- (void)makeCaption {
+    self.caption = [[THLabel alloc] init];
+    self.caption.font = [UIFont fontWithName:@"ComicSansMS" size:40.0];
+    self.caption.textColor = [UIColor whiteColor];
+    self.caption.strokeSize = 2.5;
+    self.caption.strokeColor = [UIColor blackColor];
+    self.caption.textAlignment = NSTextAlignmentCenter;
+    CGFloat captionHeight = 100;
+    self.caption.frame = CGRectMake(0, self.view.frame.size.height-captionHeight, self.view.frame.size.width, captionHeight);
+    [self.view addSubview:self.caption];
 }
 
 - (void)paddy {
@@ -145,7 +160,7 @@
 
 	AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:@"Let the Peter. See the Kay!"];
 	utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
-	utterance.rate = 0.05;
+//	utterance.rate = 0.2;
 
 	AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
 	synthesizer.delegate = self;
@@ -169,7 +184,7 @@
 	NSString *string = self.quotes[randomIndex];
 	AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:string];
 	utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
-	utterance.rate = 0.1;
+//	utterance.rate = 0.5;
 
 	AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
 	synthesizer.delegate = self;
@@ -188,6 +203,7 @@
 		[self performSelector:@selector(sylable) withObject:nil afterDelay:0.1];
 	}
 	else {
+        self.caption.text = [utterance.speechString substringWithRange:characterRange];
 		[self.peter setImage:[UIImage imageNamed:@"kay2.png"]];
 		[self performSelector:@selector(sylable) withObject:nil afterDelay:0.1];
 	}
@@ -207,6 +223,9 @@
 }
 
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
+    
+    self.caption.text = nil;
+    
 	if (paddyMode) {
 		[UIView animateWithDuration:0.5 animations: ^{
 		    self.leftPaddy.frame = (CGRect) {0, self.view.frame.size.height, self.view.frame.size.width * 0.5, self.view.frame.size.height };

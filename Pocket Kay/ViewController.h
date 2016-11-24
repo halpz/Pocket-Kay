@@ -27,6 +27,7 @@
 
 @property (strong, nonatomic) UIButton *mainButton;
 @property (strong, nonatomic) THLabel *lolText;
+@property (strong, nonatomic) THLabel *caption;
 @property (strong, nonatomic) AVAudioPlayer *laugh;
 
 @end
