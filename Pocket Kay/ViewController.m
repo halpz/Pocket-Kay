@@ -162,10 +162,10 @@
 	utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
 //	utterance.rate = 0.2;
 
-	AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
-	synthesizer.delegate = self;
-	[synthesizer pauseSpeakingAtBoundary:AVSpeechBoundaryWord];
-	[synthesizer speakUtterance:utterance];
+	self.synthesizer = [[AVSpeechSynthesizer alloc] init];
+	self.synthesizer.delegate = self;
+	[self.synthesizer pauseSpeakingAtBoundary:AVSpeechBoundaryWord];
+	[self.synthesizer speakUtterance:utterance];
 }
 
 - (void)openCurtain {
@@ -173,7 +173,7 @@
 	[UIView animateWithDuration:0.5 animations: ^{
 	    self.leftCurtain.frame = (CGRect) {-self.view.frame.size.width * 0.5, 0, self.view.frame.size.width * 0.5, self.view.frame.size.height };
 	    self.rightCurtain.frame = (CGRect) {self.view.frame.size.width, 0, self.view.frame.size.width * 0.5, self.view.frame.size.height };
-	    self.kayText.frame = textFrame0;
+	    self.kayText.frame = self->textFrame0;
 	} completion: ^(BOOL finished) {
 	    [self speak];
 	}];
@@ -186,10 +186,10 @@
 	utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
 //	utterance.rate = 0.5;
 
-	AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc] init];
-	synthesizer.delegate = self;
-	[synthesizer pauseSpeakingAtBoundary:AVSpeechBoundaryWord];
-	[synthesizer speakUtterance:utterance];
+	self.synthesizer = [[AVSpeechSynthesizer alloc] init];
+	self.synthesizer.delegate = self;
+	[self.synthesizer pauseSpeakingAtBoundary:AVSpeechBoundaryWord];
+	[self.synthesizer speakUtterance:utterance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -198,6 +198,9 @@
 
 #pragma mark - AVSpeechSynthesizerDelegate
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer willSpeakRangeOfSpeechString:(NSRange)characterRange utterance:(AVSpeechUtterance *)utterance {
+    
+//    NSLog(@"%@",utterance.speechString);
+    
 	if (paddyMode) {
 		[self.rightPaddy setImage:[UIImage imageNamed:@"pad2.png"]];
 		[self performSelector:@selector(sylable) withObject:nil afterDelay:0.1];
@@ -234,7 +237,7 @@
 		    [self.leftPaddy removeFromSuperview];
 		    [self.rightPaddy removeFromSuperview];
 		    self.mainButton.userInteractionEnabled = YES;
-		    paddyMode = NO;
+		    self->paddyMode = NO;
 		    return;
 		}];
 	}
@@ -270,7 +273,7 @@
 	        self.lolText.alpha = 0.0;
 	        self.leftCurtain.frame = (CGRect) {0, 0, self.view.frame.size.width * 0.5, self.view.frame.size.height };
 	        self.rightCurtain.frame = (CGRect) {self.view.frame.size.width * 0.5, 0, self.view.frame.size.width * 0.5, self.view.frame.size.height };
-	        self.kayText.frame = textFrame1;
+	        self.kayText.frame = self->textFrame1;
 		} completion: ^(BOOL finished) {
 	        self.lolText = nil;
 		}];

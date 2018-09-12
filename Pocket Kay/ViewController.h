@@ -30,4 +30,6 @@
 @property (strong, nonatomic) THLabel *caption;
 @property (strong, nonatomic) AVAudioPlayer *laugh;
 
+@property (strong, nonatomic) AVSpeechSynthesizer *synthesizer;
+
 @end
